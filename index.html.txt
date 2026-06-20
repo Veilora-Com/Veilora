@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VEILORA</title>
+</head>
+<body>
+<h1>VEILORA</h1>
+<p>Grace in Every Veil</p>
+</body>
+</html>
