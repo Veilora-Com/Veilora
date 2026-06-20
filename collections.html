@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VEILORA Collections</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
 body{
-font-family:Arial,sans-serif;
-background:#f8f4ec;
 margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#f8f3ea;
+color:#333;
 }
 
 header{
@@ -18,43 +21,95 @@ padding:20px;
 text-align:center;
 }
 
-header img{
-max-width:250px;
+.logo{
+max-width:400px;
+width:90%;
 }
 
-h1{
+nav{
+background:#d4af37;
+padding:15px;
 text-align:center;
-color:#c8a96b;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+.hero{
+text-align:center;
+padding:50px 20px;
+background:linear-gradient(to right,#f8f3ea,#fff8e8);
+}
+
+.hero h1{
+font-size:40px;
+color:#b8860b;
+}
+
+.hero p{
+font-size:18px;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:30px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px;
 }
 
 .card{
 background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,.1);
-text-align:center;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.card h3{
+padding:10px;
+margin:0;
 }
 
 .price{
-font-size:20px;
+padding:0 10px;
+color:#b8860b;
 font-weight:bold;
-color:#c8a96b;
+font-size:20px;
 }
 
-button{
+.btn{
+display:block;
+margin:15px;
+padding:12px;
+text-align:center;
+background:#d4af37;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+footer{
 background:#111;
 color:white;
-padding:10px 20px;
-border:none;
-border-radius:5px;
+text-align:center;
+padding:30px;
+margin-top:40px;
 }
+
 </style>
 
 </head>
@@ -62,38 +117,203 @@ border-radius:5px;
 <body>
 
 <header>
-<img src="logo.png">
+<img src="logo.png" class="logo">
 </header>
 
-<h1>Our Collection</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="collections.html">Collections</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero">
+<h1>Premium VEILORA Collection</h1>
+<p>Elegance in Every Veil</p>
+</section>
 
 <div class="products">
 
 <div class="card">
+<img src="https://picsum.photos/500/700?random=1">
 <h3>Premium Chiffon Hijab</h3>
-<div class="price">₹250</div>
-<button>Buy Now</button>
+<p class="price">₹700</p>
+<a href="payment.html" class="btn">Buy Now</a>
 </div>
 
 <div class="card">
+<img src="https://picsum.photos/500/700?random=2">
 <h3>Luxury Jersey Hijab</h3>
-<div class="price">₹350</div>
-<button>Buy Now</button>
+<p class="price">₹650</p>
+<a href="payment.html" class="btn">Buy Now</a>
 </div>
 
 <div class="card">
+<img src="https://picsum.photos/500/700?random=3">
+<h3>Turkish Modal Hijab</h3>
+<p class="price">₹699</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=4">
+<h3>Premium Silk Hijab</h3>
+<p class="price">₹799</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=5">
+<h3>Daily Wear Jersey</h3>
+<p class="price">₹399</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=6">
+<h3>Luxury Satin Hijab</h3>
+<p class="price">₹750</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=7">
+<h3>Hijab Pins Set</h3>
+<p class="price">₹250</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=8">
+<h3>Premium Undercap</h3>
+<p class="price">₹300</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=9">
+<h3>Magnetic Pins</h3>
+<p class="price">₹299</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=10">
+<h3>Luxury Combo Pack</h3>
+<p class="price">₹999</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=11">
+<h3>Classic Black Hijab</h3>
+<p class="price">₹499</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=12">
+<h3>Beige Elegance Hijab</h3>
+<p class="price">₹599</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=13">
+<h3>Rose Gold Collection</h3>
+<p class="price">₹699</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=14">
+<h3>Premium Wedding Hijab</h3>
+<p class="price">₹899</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=15">
+<h3>Luxury Gift Box</h3>
+<p class="price">₹1200</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=16">
+<h3>Everyday Essentials</h3>
+<p class="price">₹350</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=17">
+<h3>Premium Scarf</h3>
+<p class="price">₹450</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=18">
+<h3>Luxury Veil Set</h3>
+<p class="price">₹850</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=19">
+<h3>Soft Cotton Hijab</h3>
+<p class="price">₹399</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=20">
+<h3>Premium Abaya Accessories</h3>
+<p class="price">₹299</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=21">
+<h3>Elite Collection</h3>
+<p class="price">₹700</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=22">
 <h3>Signature Collection</h3>
-<div class="price">₹700</div>
-<button>Buy Now</button>
+<p class="price">₹750</p>
+<a href="payment.html" class="btn">Buy Now</a>
 </div>
 
 <div class="card">
-<h3>Hijab Magnet Set</h3>
-<div class="price">₹99</div>
-<button>Buy Now</button>
+<img src="https://picsum.photos/500/700?random=23">
+<h3>Luxury Satin Premium</h3>
+<p class="price">₹699</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=24">
+<h3>Premium Hijab Kit</h3>
+<p class="price">₹599</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/700?random=25">
+<h3>VEILORA Best Seller</h3>
+<p class="price">₹700</p>
+<a href="payment.html" class="btn">Buy Now</a>
 </div>
 
 </div>
+
+<footer>
+<p>VEILORA • Deralakatte • WhatsApp: 7090215879</p>
+</footer>
 
 </body>
 </html>
