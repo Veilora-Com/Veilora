@@ -3,159 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>VEILORA | The Hijab Boutique</title>
+<title>VEILORA | Elegance in Every Veil</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#0d0d0d;
-color:white;
-line-height:1.6;
+background:#f8f4ec;
+color:#333;
 }
 
 header{
-background:black;
+background:#111;
 padding:20px;
 text-align:center;
-border-bottom:2px solid #d4af37;
 }
 
-.logo{
-max-width:450px;
+header img{
+max-width:320px;
 width:90%;
 }
 
+nav{
+background:#c8a96b;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
 .hero{
-height:85vh;
-background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518');
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f');
 background-size:cover;
 background-position:center;
+height:500px;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
+color:white;
 padding:20px;
 }
 
-.hero-content h1{
-font-size:55px;
-color:#d4af37;
+.hero h1{
+font-size:50px;
 margin-bottom:15px;
 }
 
-.hero-content p{
-font-size:22px;
-margin-bottom:25px;
+.hero p{
+font-size:20px;
+margin-bottom:20px;
 }
 
 .btn{
 display:inline-block;
-background:#d4af37;
-color:black;
-padding:15px 35px;
+padding:12px 25px;
+background:#c8a96b;
+color:white;
 text-decoration:none;
-font-weight:bold;
-border-radius:40px;
+border-radius:5px;
+}
+
+.section{
+padding:60px 10%;
 }
 
 .section-title{
 text-align:center;
-font-size:36px;
-color:#d4af37;
-margin:60px 0 30px;
+margin-bottom:40px;
+font-size:35px;
+color:#c8a96b;
 }
 
-.collections{
+.products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
-padding:20px 8%;
 }
 
 .card{
-background:#1a1a1a;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 0 15px rgba(212,175,55,.2);
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+text-align:center;
 }
 
 .card img{
 width:100%;
 height:300px;
 object-fit:cover;
-}
-
-.card h3{
-padding:15px;
-text-align:center;
-color:#d4af37;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:30px 8%;
-}
-
-.feature{
-background:#1a1a1a;
-padding:25px;
-text-align:center;
 border-radius:10px;
 }
 
-.about{
-padding:70px 10%;
-text-align:center;
+.card h3{
+margin:15px 0;
 }
 
-.about p{
-max-width:800px;
-margin:auto;
-font-size:18px;
+.price{
+color:#c8a96b;
+font-size:22px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+button{
+background:#111;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.about{
+text-align:center;
+line-height:1.8;
 }
 
 .contact{
 background:#111;
-padding:60px 20px;
+color:white;
+padding:50px;
 text-align:center;
-}
-
-.contact h2{
-color:#d4af37;
-margin-bottom:20px;
 }
 
 footer{
-background:black;
-padding:20px;
+background:#000;
+color:white;
 text-align:center;
-border-top:1px solid #d4af37;
+padding:20px;
 }
 
-@media(max-width:768px){
-
-.hero-content h1{
-font-size:38px;
-}
-
-.hero-content p{
-font-size:18px;
-}
-
-.logo{
-max-width:300px;
-}
-
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:22px;
 }
 </style>
 </head>
@@ -163,104 +163,111 @@ max-width:300px;
 <body>
 
 <header>
-<img src="logo.png" class="logo" alt="VEILORA">
+<img src="logo.png" alt="VEILORA Logo">
 </header>
 
+<nav>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Premium</a>
+<a href="#">Accessories</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+
 <section class="hero">
-<div class="hero-content">
-<h1>Premium Hijabs & Accessories</h1>
-<p>Elegant • Modest • Timeless Fashion</p>
-
-<a href="https://wa.me/917090215879" class="btn">
-Shop on WhatsApp
-</a>
+<div>
+<h1>VEILORA</h1>
+<p>Elegance in Every Veil</p>
+<a href="#shop" class="btn">Shop Now</a>
 </div>
 </section>
 
-<h2 class="section-title">Our Collections</h2>
+<section class="section" id="shop">
+<h2 class="section-title">Best Sellers</h2>
 
-<section class="collections">
+<div class="products">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
-<h3>Chiffon Hijabs</h3>
+<img src="https://via.placeholder.com/400x500">
+<h3>Premium Chiffon Hijab</h3>
+<div class="price">₹399</div>
+<button>Add To Cart</button>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c">
-<h3>Jersey Hijabs</h3>
+<img src="https://via.placeholder.com/400x500">
+<h3>Luxury Satin Hijab</h3>
+<div class="price">₹599</div>
+<button>Add To Cart</button>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
-<h3>Premium Hijabs</h3>
+<img src="https://via.placeholder.com/400x500">
+<h3>Jersey Hijab Classic</h3>
+<div class="price">₹299</div>
+<button>Add To Cart</button>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b">
-<h3>Accessories</h3>
+<img src="https://via.placeholder.com/400x500">
+<h3>Premium Printed Hijab</h3>
+<div class="price">₹499</div>
+<button>Add To Cart</button>
 </div>
 
+</div>
 </section>
 
-<h2 class="section-title">Why Choose VEILORA</h2>
-
-<section class="features">
-
-<div class="feature">
-<h3>Premium Quality</h3>
-<p>Carefully selected fabrics and accessories.</p>
-</div>
-
-<div class="feature">
-<h3>Elegant Designs</h3>
-<p>Modern modest fashion for every occasion.</p>
-</div>
-
-<div class="feature">
-<h3>WhatsApp Ordering</h3>
-<p>Easy and convenient shopping experience.</p>
-</div>
-
-<div class="feature">
-<h3>Trusted Boutique</h3>
-<p>Serving customers from Deralakatte and beyond.</p>
-</div>
-
-</section>
-
-<section class="about">
-
+<section class="section">
 <h2 class="section-title">About VEILORA</h2>
 
+<div class="about">
 <p>
-VEILORA is a premium hijab boutique based in Deralakatte,
-offering elegant hijabs, accessories and modest fashion essentials.
-Our mission is to bring comfort, quality and style together
-for modern women.
+VEILORA is a premium hijab boutique offering elegant,
+comfortable and stylish modest fashion for women.
 </p>
 
+<br>
+
+<p>
+We specialize in chiffon hijabs, jersey hijabs,
+premium collections and accessories crafted for
+modern women.
+</p>
+</div>
 </section>
 
 <section class="contact">
-
 <h2>Contact Us</h2>
 
-<p>📍 Deralakatte, Mangalore</p>
 <br>
 
-<p>📱 WhatsApp: 7090215879</p>
+<p>Deralakatte, Mangalore</p>
+
+<p>WhatsApp: +91 7090215879</p>
+
+<p>Cash On Delivery Available</p>
+
+<p>Online Payments Coming Soon</p>
+
 <br>
 
-<a href="https://wa.me/917090215879" class="btn">
-Chat on WhatsApp
+<a class="btn"
+href="https://wa.me/917090215879">
+Order On WhatsApp
 </a>
-
 </section>
 
 <footer>
-© 2026 VEILORA - The Hijab Boutique
+© 2026 VEILORA. All Rights Reserved.
 </footer>
+
+<a
+class="whatsapp"
+href="https://wa.me/917090215879">
+💬
+</a>
 
 </body>
 </html>
