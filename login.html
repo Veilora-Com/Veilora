@@ -1,242 +1,123 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VEILORA Login</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
 body{
-background:linear-gradient(135deg,#f8f3ea,#e8dcc7);
-height:100vh;
+font-family:Segoe UI,sans-serif;
+background:#f8f3ed;
 display:flex;
 justify-content:center;
 align-items:center;
+height:100vh;
+margin:0;
 }
 
-.login-box{
-background:#fff;
-width:380px;
+.box{
+background:white;
 padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+width:360px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-.logo{
-font-size:36px;
-font-weight:bold;
+h1{
 color:#b08d57;
-margin-bottom:10px;
+margin-bottom:5px;
 }
 
-.tagline{
+p{
 color:#666;
 margin-bottom:25px;
 }
 
 input{
 width:100%;
-padding:14px;
+padding:12px;
+margin:10px 0;
 border:1px solid #ddd;
-border-radius:10px;
-margin-top:10px;
-margin-bottom:15px;
-font-size:16px;
+border-radius:8px;
+box-sizing:border-box;
 }
 
 button{
 width:100%;
-padding:14px;
+padding:12px;
 background:#b08d57;
 border:none;
-border-radius:10px;
 color:white;
 font-size:16px;
+border-radius:8px;
 cursor:pointer;
-font-weight:bold;
 }
-
-button:hover{
-background:#9b7847;
-}
-
-#otpSection{
-display:none;
-margin-top:15px;
-}
-
-#recaptcha-container{
-margin-top:15px;
-display:flex;
-justify-content:center;
-}
-
-.note{
-margin-top:15px;
-font-size:13px;
-color:#777;
-}
-
 </style>
 
 </head>
 
 <body>
 
-<div class="login-box">
+<div class="box">
 
-<div class="logo">VEILORA</div>
+<h1>VEILORA</h1>
 
-<div class="tagline">
-Elegance In Every Veil
-</div>
+<p>Elegance In Every Veil</p>
 
-<div id="phoneSection">
+<input
+type="text"
+id="name"
+placeholder="Full Name">
 
 <input
 type="tel"
 id="phone"
-placeholder="Enter 10 Digit Mobile Number"
+placeholder="10 Digit Mobile Number"
 maxlength="10">
 
-<button onclick="sendOTP()">
-Send OTP
-</button>
-
-<div id="recaptcha-container"></div>
-
-</div>
-
-<div id="otpSection">
-
-<input
-type="text"
-id="otp"
-placeholder="Enter OTP">
-
-<button onclick="verifyOTP()">
-Verify OTP
+<button onclick="login()">
+Continue Shopping
 </button>
 
 </div>
 
-<div class="note">
-Secure OTP Login Powered By Firebase
-</div>
+<script>
 
-</div>
+function login(){
 
-<script type="module">
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-
-import {
-getAuth,
-RecaptchaVerifier,
-signInWithPhoneNumber
-}
-from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
-
-const firebaseConfig = {
-
-apiKey: "AIzaSyDp9kimqvO3MnA7K0kv8rX_SE8MKv8RHm8",
-
-authDomain: "veilora-hijabs.firebaseapp.com",
-
-projectId: "veilora-hijabs",
-
-storageBucket: "veilora-hijabs.firebasestorage.app",
-
-messagingSenderId: "583937143293",
-
-appId: "1:583937143293:web:384e96af2ce84d768d2994",
-
-measurementId: "G-JEHVTD2M7L"
-
-};
-
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-window.recaptchaVerifier =
-new RecaptchaVerifier(
-auth,
-"recaptcha-container",
-{
-size:"normal"
-}
-);
-
-window.sendOTP = function(){
+let name =
+document.getElementById("name").value;
 
 let phone =
 document.getElementById("phone").value;
 
-if(phone.length !== 10){
+if(name==""){
 
-alert("Enter Valid 10 Digit Number");
+alert("Enter Name");
 
 return;
 
 }
 
-const appVerifier =
-window.recaptchaVerifier;
+if(phone.length!=10){
 
-const fullPhone =
-"+91" + phone;
+alert("Enter Valid Mobile Number");
 
-signInWithPhoneNumber(
-auth,
-fullPhone,
-appVerifier
-)
-
-.then((confirmationResult)=>{
-
-window.confirmationResult =
-confirmationResult;
-
-document.getElementById(
-"otpSection"
-).style.display="block";
-
-alert("OTP Sent Successfully");
-
-})
-
-.catch((error)=>{
-
-alert(error.message);
-
-});
+return;
 
 }
 
-window.verifyOTP = function(){
-
-let code =
-document.getElementById("otp").value;
-
-confirmationResult.confirm(code)
-
-.then((result)=>{
+localStorage.setItem(
+"veiloraName",
+name
+);
 
 localStorage.setItem(
-"veiloraUser",
-result.user.phoneNumber
+"veiloraPhone",
+phone
 );
 
 localStorage.setItem(
@@ -244,18 +125,8 @@ localStorage.setItem(
 "true"
 );
 
-alert("Login Successful");
-
-window.location.href =
+window.location.href=
 "collections.html";
-
-})
-
-.catch((error)=>{
-
-alert("Invalid OTP");
-
-});
 
 }
 
