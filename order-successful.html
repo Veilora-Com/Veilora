@@ -1,11 +1,11 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Order Confirmed | VEILORA</title>
+<title>Order Successful | VEILORA</title>
 
 <style>
 
@@ -21,23 +21,31 @@ background:#f8f4ec;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+min-height:100vh;
+padding:20px;
 }
 
 .card{
 background:white;
-width:90%;
-max-width:600px;
-padding:50px;
-text-align:center;
+max-width:650px;
+width:100%;
+padding:40px;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+text-align:center;
 }
 
 .tick{
-font-size:80px;
-color:#c8a96b;
-margin-bottom:20px;
+width:100px;
+height:100px;
+margin:0 auto 20px;
+border-radius:50%;
+background:#c8a96b;
+color:white;
+font-size:50px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 h1{
@@ -45,15 +53,33 @@ color:#c8a96b;
 margin-bottom:15px;
 }
 
-p{
+.message{
 color:#666;
+margin-bottom:25px;
 line-height:1.8;
-margin-bottom:30px;
+}
+
+.order-box{
+background:#f8f8f8;
+padding:20px;
+border-radius:12px;
+text-align:left;
+margin-top:20px;
+}
+
+.order-box p{
+margin:10px 0;
+}
+
+.status{
+color:green;
+font-weight:bold;
 }
 
 .btn{
 display:inline-block;
-padding:15px 35px;
+margin-top:25px;
+padding:14px 30px;
 background:#c8a96b;
 color:white;
 text-decoration:none;
@@ -62,10 +88,11 @@ font-weight:bold;
 }
 
 .btn:hover{
-opacity:0.9;
+background:#b69452;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -76,20 +103,63 @@ opacity:0.9;
 
 <h1>Order Placed Successfully</h1>
 
-<p>
+<p class="message">
 Thank you for shopping with VEILORA.
-
-Your order has been received successfully.
-
-Our team will process your order and contact you shortly regarding delivery.
+Your order has been received successfully and will be processed shortly.
 </p>
 
-<a href="index.html" class="btn">
+<div class="order-box">
+
+<p><strong>Order ID:</strong>
+<span id="orderId"></span></p>
+
+<p><strong>Name:</strong>
+<span id="customerName"></span></p>
+
+<p><strong>Phone:</strong>
+<span id="customerPhone"></span></p>
+
+<p><strong>Payment:</strong>
+Cash On Delivery</p>
+
+<p><strong>Status:</strong>
+<span class="status">Pending Confirmation</span></p>
+
+<p><strong>Date:</strong>
+<span id="orderDate"></span></p>
+
+</div>
+
+<a href="collections.html" class="btn">
 Continue Shopping
 </a>
 
 </div>
 
+<script>
+
+let order =
+JSON.parse(
+localStorage.getItem("lastOrder")
+);
+
+if(order){
+
+document.getElementById("orderId")
+.innerText = order.orderId;
+
+document.getElementById("customerName")
+.innerText = order.name;
+
+document.getElementById("customerPhone")
+.innerText = order.phone;
+
+document.getElementById("orderDate")
+.innerText = order.date;
+
+}
+
+</script>
+
 </body>
 </html>
-```
